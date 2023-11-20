@@ -31,7 +31,18 @@ AVATARS = (
 
 
 def preprocess_image(image: np.ndarray) -> np.ndarray:
+    # Ensure the image has at least 2 dimensions
+    if len(image.shape) < 2:
+        raise ValueError("Input must be >= 2-d.")
+    
+    # If the image is 1-dimensional, reshape it to (1, N)
+    if len(image.shape) == 1:
+        image = np.reshape(image, (1, -1))
+
+    # Flip left-right
     image = np.fliplr(image)
+
+    # Convert color space
     return cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
 
