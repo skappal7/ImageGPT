@@ -1,5 +1,5 @@
 streamlit==1.18.0
-opencv-python
+opencv-python-headless==4.5.3.56  # or the version that works without libGL
 numpy==1.21.1
 requests==2.26.0
 Pillow==8.3.1
