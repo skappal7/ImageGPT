@@ -1,10 +1,12 @@
 import base64
 import os
 import uuid
+from io import BytesIO  # Add this line
 import requests
 import numpy as np
 from PIL import Image
 import streamlit as st
+
 
 MARKDOWN = """
 # WebcamGPT 💬 + 📸
